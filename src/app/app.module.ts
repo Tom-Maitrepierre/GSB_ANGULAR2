@@ -13,6 +13,7 @@ import { MedecinsService } from './services/medecins.service';
 import { MedicamentsService } from './services/medicaments.service';
 import { RapportsService } from './services/rapports.service';
 import { AuthentificationService } from './services/authentification.service';
+import { RapportsViewComponent } from './rapports-view/rapports-view.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { AuthentificationService } from './services/authentification.service';
     MedecinsViewComponent,
     MedicamentsComponent,
     MedicamentsViewComponent,
-    RapportsComponent
+    RapportsComponent,
+    RapportsViewComponent
   ],
   imports: [
     BrowserModule,
