@@ -10,16 +10,17 @@ export class RapportsService {
   rapportSubject = new Subject<any[]>();
   private lesRapports = [];
 
+
   constructor(private http: HttpClient) { }
 
-  getAllMedecin() {
+  getAllRapport() {
     this.http.get<any[]>('http://localhost/maxime-chabaud/gsbapi/gsbapi/?noms=').subscribe(
       (response) => {
         this.lesRapports = response;
-        this.emitMedecinSubject();
+        this.emitRapportsSubject();
       }
     );
   }
 
-  emitMedecinSubject() { this.rapportSubject.next(this.lesRapports.slice()); }
+  emitRapportsSubject() { this.rapportSubject.next(this.lesRapports.slice()); }
 }

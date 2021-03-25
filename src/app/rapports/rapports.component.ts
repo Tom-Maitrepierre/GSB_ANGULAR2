@@ -15,7 +15,7 @@ export class RapportsComponent implements OnInit {
     constructor(private RapportsService: RapportsService) { }
   
     ngOnInit(): void {
-      this.RapportsService.getAllMedecin();
+      this.RapportsService.getAllRapport();
       this. rapportSubscription = this.RapportsService.rapportSubject.subscribe(
         (raps: any[]) => {
           this.rapports = raps;
