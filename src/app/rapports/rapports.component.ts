@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,Input, OnInit } from '@angular/core';
+import {Subscription} from 'rxjs';
+import {RapportsService} from '../services/rapports.service';
 
 @Component({
   selector: 'app-rapports',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RapportsComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit(): void {
+    rapports: any[];
+    rapportSubscription: Subscription;
+  
+    constructor(private RapportsService: RapportsService) { }
+  
+    ngOnInit(): void {
+      this.RapportsService.getAllMedecin();
+      this. rapportSubscription = this.RapportsService.rapportSubject.subscribe(
+        (raps: any[]) => {
+          this.rapports = raps;
+        }
+      );
+    }
   }
 
-}

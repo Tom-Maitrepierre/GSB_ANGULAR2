@@ -13,7 +13,7 @@ export class MedecinsService {
   constructor(private http: HttpClient) { }
 
   getAllMedecin() {
-    this.http.get<any[]>('http://localhost/maxime-chabaud/gsbapi/gsbapi/?noms=').subscribe(
+    this.http.get<any[]>('https://gr1.sio-carriat.com/gsbcr/?noms=').subscribe(
       (response) => {
         this.lesMedecins = response;
         this.emitMedecinSubject();
