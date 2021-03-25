@@ -1,1 +1,4 @@
-<p>rapports works!</p>
+<ul class="list-group">
+    <app-rapports-view> *ngFor="let item of rapports" [id]="item.id" [dat]="item.date" [moti]="item.motif" [bila]="item.bilan" [idVisi]="item.idVisiteur" [idMed]="item.idMedecin">
+    </app-rapports-view>
+</ul>

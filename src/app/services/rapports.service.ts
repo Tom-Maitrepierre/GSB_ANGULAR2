@@ -14,7 +14,7 @@ export class RapportsService {
   constructor(private http: HttpClient) { }
 
   getAllRapport() {
-    this.http.get<any[]>('http://localhost/maxime-chabaud/gsbapi/gsbapi/?noms=').subscribe(
+    this.http.get<any[]>('https://gr1.sio-carriat.com/gsbcr/?idRapport=1').subscribe(
       (response) => {
         this.lesRapports = response;
         this.emitRapportsSubject();
