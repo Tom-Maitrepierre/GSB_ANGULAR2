@@ -1,0 +1,5 @@
+
+<ul class="list-group">
+  <app-medecins-view *ngFor="let item of medecins" [id]="item.id" [name]="item.nom" [firstname]="item.prenom" [address]="item.adresse" [tel]="item.tel" [spec]="item.specialitecomplementaire"
+    [dep]="item.departement"></app-medecins-view>
+</ul>
