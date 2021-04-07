@@ -7,13 +7,26 @@ import { MedecinsViewComponent } from './medecins-view/medecins-view.component';
 import { MedicamentsComponent } from './medicaments/medicaments.component';
 import { MedicamentsViewComponent } from './medicaments-view/medicaments-view.component';
 import { RapportsComponent } from './rapports/rapports.component';
-import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { MedecinsService } from './services/medecins.service';
 import { MedicamentsService } from './services/medicaments.service';
 import { RapportsService } from './services/rapports.service';
 import { AuthentificationService } from './services/authentification.service';
 import { RapportsViewComponent } from './rapports-view/rapports-view.component';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { RouterModule, Routes } from '@angular/router';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
+
+
+const appRoutes: Routes = [
+
+  { path: 'medecins', component: MedecinsComponent},
+  { path: 'medicaments', component: MedicamentsComponent},
+  { path: 'rapports', component: RapportsComponent},
+
+
+];
 
 @NgModule({
   declarations: [
@@ -28,8 +41,11 @@ import { RapportsViewComponent } from './rapports-view/rapports-view.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    MDBBootstrapModule.forRoot(),
+    RouterModule.forRoot(appRoutes),
+    MatToolbarModule,
+    MatButtonModule
   ],
   providers: [
     MedecinsService,
