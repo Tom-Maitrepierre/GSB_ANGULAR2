@@ -21,6 +21,6 @@ export class RapportsComponent implements OnInit {
           this.rapports = raps;
         }
       );
-    }//t
+    }
   }
 
