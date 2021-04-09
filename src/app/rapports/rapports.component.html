@@ -1,4 +1,5 @@
 <ul class="list-group">
-    <app-rapports-view> *ngFor="let item of rapports" [id]="item.id" [dat]="item.date" [moti]="item.motif" [bila]="item.bilan" [idVisi]="item.idVisiteur" [idMed]="item.idMedecin">
+    <app-rapports-view
+ *ngFor="let item of rapports" [id]="item.id"  [nom]="item.nom"  [prenom]="item.prenom"  [date]="item.date" [motif]="item.motif" [bilan]="item.bilan" [idMedecin]="item.idMedecin">
     </app-rapports-view>
 </ul>
