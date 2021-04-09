@@ -1,3 +1,9 @@
-<ul class="list-group">
-    <app-medecins-view *ngFor="let item of medecins" [id]="item.id" [name]="item.nom" [firstname]="item.prenom" [address]="item.adresse" [tel]="item.tel" [spec]="item.specialitecomplementaire" [dep]="item.departement"></app-medecins-view>
-</ul>
+<div class="col-xs-12">
+
+    <ul class="list-group">
+        <app-medecins-view *ngFor="let item of medecins | paginate: {itemsPerPage : 10, currentPage: p }" [id]="item.id" [name]="item.nom" [firstname]="item.prenom"
+            [address]="item.adresse" [tel]="item.tel" [spec]="item.specialitecomplementaire" [dep]="item.departement">
+        </app-medecins-view>
+    </ul>
+</div>    
+<pagination-controls (pageChange)="p = $event"></pagination-controls>

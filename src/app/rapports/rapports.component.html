@@ -1,5 +1,6 @@
 <ul class="list-group">
     <app-rapports-view
- *ngFor="let item of rapports" [id]="item.id"  [nom]="item.nom"  [prenom]="item.prenom"  [date]="item.date" [motif]="item.motif" [bilan]="item.bilan" [idMedecin]="item.idMedecin">
+ *ngFor="let item of rapports | paginate: {itemsPerPage : 10, currentPage: p }" [id]="item.id"  [nom]="item.nom"  [prenom]="item.prenom"  [date]="item.date" [motif]="item.motif" [bilan]="item.bilan" [idMedecin]="item.idMedecin">
     </app-rapports-view>
 </ul>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
