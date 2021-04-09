@@ -11,7 +11,8 @@ export class RapportsComponent implements OnInit {
 
     rapports: any[];
     rapportSubscription: Subscription;
-  
+    p: number = 1 ;
+
     constructor(private RapportsService: RapportsService) { }
   
     ngOnInit(): void {
