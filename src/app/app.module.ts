@@ -17,6 +17,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { RouterModule, Routes } from '@angular/router';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 
 const appRoutes: Routes = [
@@ -45,7 +46,8 @@ const appRoutes: Routes = [
     MDBBootstrapModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     MatToolbarModule,
-    MatButtonModule
+    MatButtonModule,
+    NgxPaginationModule
   ],
   providers: [
     MedecinsService,

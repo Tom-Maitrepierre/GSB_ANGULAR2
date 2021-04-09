@@ -12,6 +12,7 @@ export class MedecinsComponent implements OnInit {
 
   medecins: any[];
   medecinSubscription: Subscription;
+  p: number = 1 ;
 
   constructor(private medecinsService: MedecinsService) { }
 
