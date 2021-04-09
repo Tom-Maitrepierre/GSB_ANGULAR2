@@ -8,10 +8,11 @@ import { RapportsService } from '../services/rapports.service';
 })
 export class RapportsViewComponent implements OnInit {
   @Input() id: number;
-  @Input() date: Date;
+  @Input() nom: string;
+  @Input() prenom: string; 
+  @Input() date: string;
   @Input() motif: string;
   @Input() bilan: string;
-  @Input() idVisiteur: string;
   @Input() idMedecin: number;
 
 
