@@ -15,16 +15,16 @@ import { AuthentificationService } from './services/authentification.service';
 import { RapportsViewComponent } from './rapports-view/rapports-view.component';
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { RouterModule, Routes } from '@angular/router';
-import {MatToolbarModule} from '@angular/material/toolbar';
-import {MatButtonModule} from '@angular/material/button';
-import {NgxPaginationModule} from 'ngx-pagination';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 const appRoutes: Routes = [
 
-  { path: 'medecins', component: MedecinsComponent},
-  { path: 'medicaments', component: MedicamentsComponent},
-  { path: 'rapports', component: RapportsComponent},
+  { path: 'medecins', component: MedecinsComponent },
+  { path: 'medicaments', component: MedicamentsComponent },
+  { path: 'rapports', component: RapportsComponent },
 
 
 ];

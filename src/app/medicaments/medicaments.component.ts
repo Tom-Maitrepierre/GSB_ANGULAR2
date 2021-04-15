@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Subscription} from 'rxjs';
-import { MedicamentsService } from 'GSB_ANGULAR2/src/app/services/medicaments.service';
+import { Subscription } from 'rxjs';
+import { MedicamentsService } from '../services/medicaments.service';
 
 @Component({
   selector: 'app-medicaments',
@@ -10,14 +10,14 @@ import { MedicamentsService } from 'GSB_ANGULAR2/src/app/services/medicaments.se
 export class MedicamentsComponent implements OnInit {
 
   medicaments: any[];
-    medicamentSubscription: Subscription;
+  medicamentsSubscription: Subscription;
 
   constructor(private Medicaments: MedicamentsService) { }
 
   ngOnInit(): void {
     this.Medicaments.getAllMedicaments();
     this.medicamentsSubscription = this.Medicaments.medicamentsSubject.subscribe(
-      (raps: any[]) => {
+      (medocs: any[]) => {
         this.medicaments = medocs;
       }
     );

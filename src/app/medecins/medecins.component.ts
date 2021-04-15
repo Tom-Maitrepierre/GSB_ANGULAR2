@@ -1,6 +1,6 @@
-import { Component, OnInit,  } from '@angular/core';
-import {Subscription} from 'rxjs';
-import {MedecinsService} from '../services/medecins.service';
+import { Component, OnInit, } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { MedecinsService } from '../services/medecins.service';
 
 @Component({
   selector: 'app-medecins',
@@ -12,7 +12,7 @@ export class MedecinsComponent implements OnInit {
 
   medecins: any[];
   medecinSubscription: Subscription;
-  p: number = 1 ;
+  p: number = 1;
 
   constructor(private medecinsService: MedecinsService) { }
 
