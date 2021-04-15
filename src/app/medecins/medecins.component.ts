@@ -1,4 +1,4 @@
-import { Component, OnInit, } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { MedecinsService } from '../services/medecins.service';
 
@@ -13,6 +13,7 @@ export class MedecinsComponent implements OnInit {
   medecins: any[];
   medecinSubscription: Subscription;
   p: number = 1;
+  @Input() name: string;
 
   constructor(private medecinsService: MedecinsService) { }
 
@@ -23,5 +24,8 @@ export class MedecinsComponent implements OnInit {
         this.medecins = meds;
       }
     );
+  }
+  Search() {
+    this.medecinsService.search(this.name);
   }
 }

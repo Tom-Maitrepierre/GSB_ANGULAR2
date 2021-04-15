@@ -21,6 +21,15 @@ export class MedecinsService {
     );
   }
 
+  search(name: string) {
+    this.http.get<any[]>('https://gr1.sio-carriat.com/gsbcr/?noms=' + name).subscribe(
+      (response) => {
+        this.lesMedecins = response;
+        this.emitMedecinSubject();
+      }
+    );
+  }
+
   emitMedecinSubject() { this.medecinSubject.next(this.lesMedecins.slice()); }
 }
 
