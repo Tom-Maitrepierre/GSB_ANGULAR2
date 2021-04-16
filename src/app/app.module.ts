@@ -19,6 +19,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FormsModule } from '@angular/forms';
+import { ModifierMedecinsComponent } from './medecins-view/modifier-medecins/modifier-medecins.component';
 
 
 const appRoutes: Routes = [
@@ -26,6 +27,7 @@ const appRoutes: Routes = [
   { path: 'medecins', component: MedecinsComponent },
   { path: 'medicaments', component: MedicamentsComponent },
   { path: 'rapports', component: RapportsComponent },
+  { path: 'modifier', component: ModifierMedecinsComponent },
 
 
 ];
@@ -39,7 +41,8 @@ const appRoutes: Routes = [
     MedicamentsComponent,
     MedicamentsViewComponent,
     RapportsComponent,
-    RapportsViewComponent
+    RapportsViewComponent,
+    ModifierMedecinsComponent
   ],
   imports: [
     BrowserModule,
