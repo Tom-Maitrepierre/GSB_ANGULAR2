@@ -1,1 +1,17 @@
-<p>modifier-medecins works!</p>
+<br><br>
+<form [formGroup]="modifMedecins" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label>Adresse</label>
+        <input type="text" class="form-control" formControlName="adresse">
+    </div>
+    <div class="form-group">
+        <label>Téléphone</label>
+        <input type="text" class="form-control" formControlName="tel">
+    </div>
+    <div class="form-group">
+        <label>Spec</label>
+        <input type="text" class="form-control" formControlName="spec">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Valider</button>
+</form>
