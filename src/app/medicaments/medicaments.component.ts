@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { MedicamentsService } from '../services/medicaments.service';
 
@@ -11,12 +11,14 @@ export class MedicamentsComponent implements OnInit {
 
   medicaments: any[];
   medicamentsSubscription: Subscription;
+  p: number = 1;
+  @Input() name: string;
 
   constructor(private Medicaments: MedicamentsService) { }
 
   ngOnInit(): void {
     this.Medicaments.getAllMedicaments();
-    this.medicamentsSubscription = this.Medicaments.medicamentsSubject.subscribe(
+    this.medicamentsSubscription = this.Medicaments.medicamentSubject.subscribe(
       (medocs: any[]) => {
         this.medicaments = medocs;
       }

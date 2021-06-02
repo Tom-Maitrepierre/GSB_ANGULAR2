@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,Input, OnInit } from '@angular/core';
+import { MedicamentsService } from '../services/medicaments.service';
 
 @Component({
   selector: 'app-medicaments-view',
@@ -6,8 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./medicaments-view.component.css']
 })
 export class MedicamentsViewComponent implements OnInit {
+@Input() ref: string;
+@Input() name: string;
+@Input() idFam: string;
+@Input() compo: string;
+@Input() effect: string;
+@Input() contraindication: string;
 
-  constructor() { }
+leMedicament: any[];
+
+  constructor(private medicamentsService: MedicamentsService) { }
 
   ngOnInit(): void {
   }

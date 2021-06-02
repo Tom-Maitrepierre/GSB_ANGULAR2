@@ -1,3 +1,11 @@
-<ul class="list-group">
- 
-</ul>
+
+<div class="col-xs-12">
+
+    <ul class="list-group">
+        <app-medicaments-view *ngFor="let item of medicaments | paginate: {itemsPerPage : 10, currentPage: p }"  [ref]="item.ref" [name]="item.name" [idFam]="item.idFam" [compo]="item.compo" 
+        [effect]="item.effect" [contraindication]="item.contraindication">
+        </app-medicaments-view>
+    </ul>
+</div>
+<pagination-controls class="text-right" (pageChange)="p = $event"></pagination-controls>
+<br><br>

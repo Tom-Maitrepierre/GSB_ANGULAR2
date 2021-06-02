@@ -7,13 +7,13 @@ import {HttpClient} from '@angular/common/http';
 })
 export class MedicamentsService {
 
-  medicamentsSubject = new Subject<any[]>();
+  medicamentSubject = new Subject<any[]>();
   private lesMedicaments = [];
 
   constructor(private http: HttpClient) { }
 
   getAllMedicaments() {
-    this.http.get<any[]>('https://gr1.sio-carriat.com/gsbcr/?id5=d51&dateVisite=2017-04-01').subscribe(
+    this.http.get<any[]>('https://gr1.sio-carriat.com/gsbcr/?nomMed=').subscribe(
       (response) => {
         this.lesMedicaments = response;
         this.emitMedicamentsSubject();
@@ -21,6 +21,6 @@ export class MedicamentsService {
     );
   }
 
-  emitMedicamentsSubject() { this.medicamentsSubject.next(this.lesMedicaments.slice()); }
+  emitMedicamentsSubject() { this.medicamentSubject.next(this.lesMedicaments.slice()); }
 }
 

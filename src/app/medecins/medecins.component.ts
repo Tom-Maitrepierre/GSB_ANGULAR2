@@ -9,7 +9,6 @@ import { MedecinsService } from '../services/medecins.service';
 })
 export class MedecinsComponent implements OnInit {
 
-
   medecins: any[];
   medecinSubscription: Subscription;
   p: number = 1;
