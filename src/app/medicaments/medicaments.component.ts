@@ -14,11 +14,11 @@ export class MedicamentsComponent implements OnInit {
   p: number = 1;
   @Input() name: string;
 
-  constructor(private Medicaments: MedicamentsService) { }
+  constructor(private medicamentsService: MedicamentsService) { }
 
   ngOnInit(): void {
-    this.Medicaments.getAllMedicaments();
-    this.medicamentsSubscription = this.Medicaments.medicamentSubject.subscribe(
+    this.medicamentsService.getAllMedicaments();
+    this.medicamentsSubscription = this.medicamentsService.medicamentSubject.subscribe(
       (medocs: any[]) => {
         this.medicaments = medocs;
       }
